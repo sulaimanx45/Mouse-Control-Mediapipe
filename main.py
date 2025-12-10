@@ -14,6 +14,7 @@ while True:
     success, frame = capture.read()
     if not success:
         break
+    frame=cv2.flip(frame,1)
     rgb_image = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
     results = hands.process(rgb_image)
     if results.multi_hand_landmarks:
